@@ -24,11 +24,12 @@ function merge(firstHalf, secondHalf) {
 function mergeSort(array) {
     let midpoint = array.length / 2
     let firstHalf = array.splice(0, midpoint)
-    let secondHalf = array.splice(midpoint, array.length)
-
+    let sorted;
+    
     if (array.length < 2) {
         return array
     } else {
-        return merge(mergeSort(firstHalf), mergeSort(secondHalf))
+        sorted = merge(mergeSort(firstHalf), mergeSort(secondHalf))
     }
+    return sorted
 }
